@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        Application.targetFrameRate = 60;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         Jump();
+        Kill();
     }
 
     void FixedUpdate()
@@ -52,5 +54,10 @@ public class PlayerMovement : MonoBehaviour
         {
             toJump = true;
         }
+    }
+
+    void Kill() // for non-browser
+    {
+        if (Input.GetKeyDown(KeyCode.K)) Application.Quit();
     }
 }
