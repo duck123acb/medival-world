@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 30;
         rb = GetComponent<Rigidbody>();
     }
 
